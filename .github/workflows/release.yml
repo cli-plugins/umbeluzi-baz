@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Prepare Release Assets
+        run: |
+          # Determine file extension based on type
+          
+          
+          # Copy plugin file with correct extension
+          cp plugin.pl umbeluzi-baz
+          
+          
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            
+            umbeluzi-baz
+            
